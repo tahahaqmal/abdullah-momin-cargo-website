@@ -1,0 +1,971 @@
+#top{
+    width: 100%;
+    height: auto;
+    background-color: #47338B;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding: 30px 0px 15px 0px;
+    background-image: url("images/our_background.jpg");
+}
+.wrapper1 {
+    display: inline-flex;
+    list-style: none;
+
+}
+  
+.wrapper1 .icon1 {
+    position: fixed;
+    background: #1DA1F2;
+    color: white;
+    border-radius: 50%;
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    left: 0px;
+    z-index: 1;
+    bottom: 0px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.wrapper1 .tooltip1 {
+    position: absolute;
+    top: 0;
+    font-size: 12px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper1 .tooltip1::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+  
+.wrapper1 .icon1:hover .tooltip1 {
+    top: -35px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+  
+.wrapper1 .icon1:hover span,
+.wrapper1 .icon1:hover .tooltip1,
+.wrapper1 .icon1:hover .textForCall{
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+.wrapper1 .whatsapp:hover,
+.wrapper1 .whatsapp:hover .tooltip1,
+.wrapper1 .whatsapp:hover .tooltip1::before,
+.wrapper1 .icon1:hover .textForCall {
+    background: #21008d;
+    color: #faf759;
+    transform: scale(1.1);
+}
+.wrapper1 .icon2 {
+    position: fixed;
+    background: green;
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+    font-size: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    right: 0px;
+    z-index: 1;
+    bottom: 0px;
+}
+
+.wrapper1 .tooltip2 {
+    position: absolute;
+    top: 0;
+    font-size: 12px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+  
+.wrapper1 .tooltip2::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+  
+.wrapper1 .icon2:hover .tooltip2 {
+    top: -35px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+  
+.wrapper1 .icon2:hover span,
+.wrapper1 .icon2:hover .tooltip2 {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+.wrapper1 .whatsapp:hover,
+.wrapper1 .whatsapp:hover .tooltip2,
+.wrapper1 .whatsapp:hover .tooltip2::before {
+    background: #21008d;
+    color: #faf759;
+}
+.card{
+    overflow: hidden;
+    text-align:center;
+    margin-bottom: 60px;
+}
+.menu {
+    position: relative;
+    width: 40%;
+    height: 100%;
+    visibility: hidden;
+    right: -170px;
+    bottom: 0;
+    background-color: #01416f;
+    border-radius: 10px 0px 10px 10px;
+}
+.card.active .menu{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 40%;
+    height: 100%;
+    background-color: #01416f;
+    border-radius: 10px 0px 0px 10px;
+    transition: 0.9s;
+    visibility: visible;
+}
+.icon{
+    position: fixed;
+    left: 0;
+    width: 130px;
+    height: auto;
+    margin-left: 15px;
+    display: inline-block;
+}
+.title{
+    position: fixed;
+    display: inline-block;
+    left: 0;
+    right: 0;
+    top: 0;
+
+}
+.toggle {
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.toggle1 {
+    position: absolute;
+    right: 20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 5%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid rgb(134, 134, 134);
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+    background-color: #ffffff;
+}
+.card.active .toggle1{
+    background-color: rgb(48, 48, 48);
+    border-radius: 20%;
+}
+.line-1,
+.line-2,
+.line-3 {
+    height: 3px;
+    width: 50px;
+    background-color: black;
+    transition: background-color 0.1s;
+    border-radius: 20px;
+}
+.card.active .line-1,
+.card.active .line-2,
+.card.active .line-3{
+    background-color: white;
+}
+.line-1 {
+    transform: translate(16px, 6px);
+}
+  
+.line-2 {
+    transform:translate(0px, 0px);
+}
+.line-3{
+	transform:translate(-16px, -6px);
+	 transition: 0s ease;
+}
+.ul {
+    position: relative;
+    width: 100%;
+	visibility: hidden;
+    margin-top: 60px;
+    padding-left: 20px;
+}
+.card.active .ul {
+    visibility: visible;
+    opacity: 1;
+}
+.li {
+    position: relative;
+    list-style: none;
+    height: 55px;
+    width: 100%;
+    padding-left: 23px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;    
+    color: white;
+}
+.li:hover {
+    border-left: 3px solid blue;
+    color: rgb(145, 145, 145); 
+}
+.span{
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+}
+  
+.card.active .span {
+    visibility: visible;
+    opacity: 1;
+}
+.gif{
+    position: absolute;
+    left: 10px;
+    top: 60px;
+    max-width: 15%;
+    height: auto;
+}
+.icons{
+    color: white; 
+    text-decoration: none; 
+    margin-right: 20px;
+    display: inline-block;
+    border: 1px solid white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    transition: 0.3s;
+}
+.icons:hover{
+    background-color: #47338B;
+}
+.icons1{
+    color: white; 
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    transition: 0.3s;
+}
+.icons1:hover{
+    background-color: #47338B;
+}
+.text1{
+    max-width: 88%;
+    margin: auto;
+    border: 1px solid rgb(0, 0, 94);
+    border-right: none;
+    border-left: none;
+    text-align: center;
+    font-family: Tahoma;
+    font-weight: bold;
+    color: #fc6a09;
+    padding: 50px 0px 50px 0px;
+    font-size: 24px;
+
+}
+#yourDiv13{
+    max-width: 85%;
+    background-color: #47338B;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-family: Tahoma;
+    padding: 40px 15px 40px 15px;
+    font-size: 10px;
+}
+#yourDiv14{
+    max-width: 85%;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-family: Tahoma;
+    padding: 20px 15px 20px 15px;
+    font-size: 16px;
+    border: 1px solid rgb(209, 209, 209);
+}
+#yourDiv15{
+    max-width: 85%;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-family: Tahoma;
+    padding: 20px 15px 20px 15px;
+    font-size: 16px;
+    border: 1px solid rgb(209, 209, 209);
+}
+#yourDiv16{
+    max-width: 100%;
+    height: auto;
+    background-color: black;
+    color: white;
+    font-family: Tahoma;
+    text-align: center;
+    padding: 50px 10px 50px 10px;
+}
+#yourDiv17{
+    text-align: center;
+}
+.service{
+    max-width: 85%;
+    height: auto;
+    font-family: Tahoma;
+    text-align: center;
+    color: white;
+    background-color: #47338B;
+    padding: 10px;
+
+    margin: auto;
+}
+.services_parts{
+    border: 1px solid rgb(170, 170, 170);
+    max-width: 85%;
+    height: auto;
+    margin: auto;
+
+}
+.parts{
+    border-bottom: 1px solid rgb(170, 170, 170);
+    text-align: left;
+    color: rgb(70, 69, 69);
+    cursor: pointer;
+    background-color: white;
+    height: auto;
+    line-height: 50px;
+    transition: 0.3s;
+}
+.parts:hover{
+    background-color: rgb(228, 228, 228);
+}
+
+.parts .details {
+    display: none;
+  }
+  
+.expanded .details {
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    font-family: Tahoma;
+}
+.services_pics{
+    max-width: 70%;
+    height: auto;
+}
+.button_Read{
+    text-decoration: none;
+    display: inline-block;
+    width: 100px;
+    height: 35px;
+    background-color:#47338B;
+    border-radius: 5px;
+    color: white;
+    line-height: 35px;
+    transition: 0.3s;
+    border: 1px solid #47338B;
+}
+.button_Read:hover{
+    background-color: #fa6e13;
+    border: 1px solid #a84503;
+}
+@keyframes moveFromLeft{
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveFromRight{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+body, html {
+    margin: 0;
+    padding: 0;
+}
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(300px);
+    transition: 0.5s ease;
+}
+.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+#yourDiv{
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#yourDiv1{
+    margin-top: 40px;
+    background-color: white;
+    text-align: center;
+    color: black;
+    max-width: 900px;
+    font-family: sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+#yourDiv2{
+    border-top: 1px solid rgb(187, 186, 186);
+    max-width: 100%;
+    background-color: #ffffff;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+#yourDiv4{
+    text-align: center;
+}
+#yourDiv5{
+    text-align: center;
+    font-family: sans-serif;
+}
+#yourDiv6{
+    text-align: center;
+    font-family: sans-serif;
+    margin-top: 40px;
+    overflow: hidden;
+}
+#yourDiv7{
+    text-align: center;
+    font-family: sans-serif;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.transfers{
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+}
+#yourDiv8{
+    text-align: left;
+    font-family: sans-serif;
+    margin-top: 40px;
+    padding: 30px;
+    max-width: 100%;
+    background-color: #47338B;
+    overflow: hidden;
+
+}
+#yourDiv9{
+    font-family: sans-serif;
+    color: white;
+    text-align-last: center;
+}
+#yourDiv10{
+    position: fixed;
+}
+.fromLeftAnimation{
+    animation-name: moveFromLeft;
+}
+.fromRightAnimation{
+    animation-name: moveFromRight;
+}
+.background{
+    max-width: 100%;
+    height: auto;
+}
+.background_main{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.background_div{
+    display: inline-block;
+    background-color: #005cb2;
+    border-radius: 10px;
+    max-width: 400px;
+    height: 300px;
+    margin: 13px;
+    padding: 20px;
+    font-family: sans-serif;
+    text-align: center;
+    transition: 0.2s;
+}
+.background_div:hover{
+    background-color: #fa6e13;
+}
+.pics{
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-family: sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+.divs1{
+    background-color: #326aa4;
+    color: white;
+    width: 240px;
+    height: 220px;
+    display: inline-block;
+    margin: 10px;
+    font-family: sans-serif;
+    box-shadow: 2px 2px 6px rgb(0, 0, 0);
+    transition: 0.3s;
+    padding-top: 60px;
+}
+.divs1:hover{
+    width: 244px;
+    height: 224px;
+}
+.divs2{
+    background-color: white;
+    color: black;
+    width: 240px;
+    height: 220px;
+    display: inline-block;
+    margin: 10px;
+    font-family: sans-serif;
+    box-shadow: 2px 2px 6px rgb(0, 0, 0);
+    transition: 0.3s;
+    padding-top: 60px;
+}
+.divs2:hover{
+    width: 244px;
+    height: 224px;
+}
+.brands{
+    width: 160px;
+    margin: 10px;
+}
+.mission{
+    max-width: 100%;
+    height: auto;
+}
+.mission1{
+    margin-top: -25px;
+    background-color: #2957a9;
+    max-width: 100%;
+    height: auto;
+    font-family: sans-serif;
+    padding: 40px;
+    color: white;
+}
+.vission{
+    margin-top: -25px;
+    background-color: #fa6e13;
+    max-width: 100%;
+    height: auto;
+    font-family: sans-serif;
+    padding: 40px;
+    color: white;
+}
+.button{
+    border: 1px solid white;
+    width: 150px;
+    height: 40px;
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 37px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.3s;
+    display: inline-block;
+}
+.button:hover{
+    border: 1px solid white;
+    background-color: white;
+    color: black;
+    height: 40px;
+    width: 150px;
+    line-height: 37px;
+}
+.buttonA{
+    text-decoration: none;
+}
+.team{
+    font-family: sans-serif;
+    color: white;
+    margin-top: -25px;
+    background-color: #47338B;
+    max-width: 100%;
+    height: 80px;
+    text-align: center; 
+    line-height: 80px;
+}
+.shopkeeper{
+    font-family: sans-serif;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    width: 250px;
+    height: 420px;
+    background-image: url("images/team_back.png");
+    margin: 5px;
+    border: 1px solid #47338B;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.shopkeeper:hover{
+    opacity: 0.8;
+}
+.shoppic{
+    width: 250px;
+    height: 300px;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+.shopkeeper1{
+    font-family: sans-serif;
+    text-align: center;
+    display: inline-block;
+    max-width: 90%;
+    height: auto;
+    margin: 5px;
+    border: 1px solid #47338B;
+    cursor: pointer;
+    transition: 0.3s;
+    color: rgb(70, 69, 69);
+    padding: 10px;
+}
+.shopkeeper1:hover{
+    opacity: 0.8;
+}
+.shoppic1{
+  max-width: 50%;
+  height: auto;
+}
+.title{
+    display: inline-block;
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    right: 75px;
+    
+}
+.title1{
+    display: inline-block;
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    left: 155px;
+    
+}
+.post1{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    box-shadow: 2px 2px 6px rgb(0, 0, 0);
+    padding: 10px;
+    margin-bottom: 7px;
+}
+.post1pic{
+    width: 900px;
+    height: auto;
+}
+.border{
+    border: 2px solid #2957a9;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button1{
+    border: 1px solid rgb(70, 69, 69);
+    width: 150px;
+    height: 40px;
+    color: #2957a9;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 37px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.4s;
+    display: inline-block;
+}
+.button1:hover{
+    border: 1px solid #2957a9;
+    background-color: #2957a9;
+    color: white;
+    height: 40px;
+    width: 150px;
+    line-height: 37px;
+}
+.buttonb{
+    text-decoration: none;
+}
+
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    position: absolute;
+    left: 0;
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #ffffff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #ffffff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #ffffff;
+  }
+  
+  .wrapper .whatsapp:hover,
+  .wrapper .whatsapp:hover .tooltip,
+  .wrapper .whatsapp:hover .tooltip::before {
+    background: green;
+    color: #ffffff;
+  }
+  
+  .wrapper .youtube:hover,
+  .wrapper .youtube:hover .tooltip,
+  .wrapper .youtube:hover .tooltip::before {
+    background: #CD201F;
+    color: #ffffff;
+  }
+  
+  *:focus,
+  *:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .slider {
+    position: relative;
+    max-width: 100%;
+    height: 300px;
+    overflow: hidden;
+    text-align: center;
+}
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.slide.active {
+    opacity: 1;
+}
+.slider_pics{
+    width: 100%;
+    height: auto;
+}
+.text {
+    position: absolute;
+    top: 0px;
+    color: white;
+    transition: top 1s;
+    font-family: sans-serif;
+    text-align: justify;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-weight: bold;
+}
+
+.button-left {
+    position: absolute;
+    top: 74%;
+    left: 34%;
+    padding: 10px 20px;
+    background: #47338B;
+    color: white;
+    cursor: pointer;
+    transition: left 1s, background 0.4s;
+    border-radius: 6px;
+    border: 1px solid #47338B;
+    overflow: hidden;
+    z-index: 1;
+    
+}
+.button-left:hover{
+    background: #fa6e13;
+    border: 1px solid #a84503;
+}
+.button-right {
+    position: absolute;
+    top: 74%;
+    right: 67%;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: right 1s, background 0.4s;
+    border-radius: 6px;
+    border: 1px solid #ffffff;
+    z-index: 1;
+}
+.button-right:hover{
+    background: #47338B;
+}
+.arrow {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 30px;
+    height: 50px;
+    background-color:white;
+    opacity: 0.7;
+    transition: 0.4s;
+    text-align: center;
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: bold;
+}
+.arrow:hover{
+    background-color: #47338B;
+    color: white;
+}
+.arrow-left {
+    position: absolute;
+    left: 0px;
+    display: inline-block;
+    border-radius: 0px 10px 10px 0px;
+}
+.arrow-right {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    border-radius: 10px 0px 0px 10px;
+}
+.location{
+    width: 400px;
+    height: 300px;
+    display: block;
+    margin: auto;
+}
